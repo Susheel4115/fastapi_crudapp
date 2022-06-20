@@ -17,3 +17,15 @@
 
 5. open the link in your browser
    # http://localhost:8000/docs
+
+```bash
+Contributors
+```
+
+### Name: Sarafraj Mallick
+
+### Email: sarafraj01999@gmail.com
+
+### Name: Susheel Kumar
+
+### Email: gopisusheelkumar@gmail.com
