@@ -1,8 +1,8 @@
 from fastapi import Depends, FastAPI, status, Response
-from . import schemas, models
-from .database import SessionLocal, engine
+import schemas, models
+from database import SessionLocal, engine
 from sqlalchemy.orm import Session
-from .getCoordinate import getCoordinate
+from getCoordinate import getCoordinate
 from geopy.distance import geodesic
 
 app = FastAPI()
@@ -30,6 +30,7 @@ def create_address(req: schemas.Address, res:Response, db :Session = Depends(get
 
         # getting the location & coordinate data from mapquest api 
         locationData = getCoordinate(addressLine, city, state)
+        print(locationData)
 
         # creaing new row for address table 
         newAddress = models.Address(
