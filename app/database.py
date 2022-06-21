@@ -4,7 +4,7 @@ from sqlalchemy.orm import sessionmaker
 
 # using sqlalchemy initilizing the database 
 
-SQLALCHEMY_DATABASE_URL = "sqlite:///./fastapi.db"
+SQLALCHEMY_DATABASE_URL = "sqlite:///./fastapitest.db"
 
 engine = create_engine(
     SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False}

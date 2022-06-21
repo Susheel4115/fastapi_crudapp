@@ -1,5 +1,5 @@
 from sqlalchemy import Column, Integer, Float, String
-from database import Base
+from .database import Base
 
 
 # creatiing table for database 

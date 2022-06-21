@@ -1,8 +1,8 @@
 from fastapi import Depends, FastAPI, status, Response
-import schemas, models
-from database import SessionLocal, engine
+from . import schemas, models
+from .database import SessionLocal, engine
 from sqlalchemy.orm import Session
-from getCoordinate import getCoordinate
+from .getCoordinate import getCoordinate
 from geopy.distance import geodesic
 
 app = FastAPI()
@@ -103,13 +103,13 @@ def get_nearest_address(res: Response, addressLine, city, state, db :Session = D
 
         geodesic is importaed from geopy.distance module
 
-        Here, someAddress will hold all the address that between 100km
+        Here, someAddress will hold all the address that between 200km
         """
 
         for address in allAddress:
             secondCoordinate = (address.latitude, address.longitude)
             distanceBetween = geodesic(firstCoordinate, secondCoordinate).km
-            if distanceBetween <= 100:
+            if distanceBetween <= 200:
                 someAddress.append(address)
         
 
